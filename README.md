@@ -1,207 +1,8 @@
 # Random Thunder Sound Plugin / 随机雷声音效插件
 
-## [中文文档](#Chinese)
+## [English Documentation](#English)
 ---
-## English Documentation
-## 🎯 Overview
-
-A highly optimized RPG Maker MV/MZ plugin that provides realistic random thunder sound effects with synchronized screen flashes.  
-The plugin features a modular architecture, improved performance, and extensive configuration.
-
----
-
-## ✨ Features
-
-- **Modular Architecture:** Code organized into logical modules for better maintainability
-- **Realistic Thunder Simulation:** Distance-based audio effects with correlated parameters
-- **Screen Flash Effects:** Synchronized lightning flashes with distance-based color variations
-- **Flexible Control:** Comprehensive plugin command system
-- **Performance Optimized:** Efficient memory usage and reduced computational overhead
-- **Error Handling:** Robust error checking and warning system
-- **Debug Tools:** Built-in debugging and testing commands
-
----
-
-## 🏗️ Architecture
-
-The plugin is organized into several specialized modules:
-
-| Module           | Purpose                             |
-|------------------|-------------------------------------|
-| Config           | Manages plugin parameters and defaults |
-| State            | Tracks runtime state and current settings |
-| AudioManagerEx   | Handles audio playback and effects  |
-| TimerManager     | Manages timing and scheduling       |
-| ConfigManager    | Processes configuration changes     |
-| DebugTools       | Provides debugging functionality    |
-| SceneHandler     | Manages scene transitions           |
-| PluginCommands   | Registers all plugin commands       |
-
----
-
-## ⚙️ Configuration Parameters
-
-| Parameter          | Description                           | Default   | Range         |
-|--------------------|---------------------------------------|-----------|---------------|
-| thunderSeName      | SE filename (without extension)       | Thunder1  | Any valid filename |
-| minInterval        | Minimum interval between thunders (s) | 2         | 0.1–60        |
-| maxInterval        | Maximum interval between thunders (s) | 10        | 0.1–60        |
-| minVolume          | Minimum volume level                  | 30        | 0–100         |
-| maxVolume          | Maximum volume level                  | 90        | 0–100         |
-| minPan             | Minimum stereo pan                    | -30       | -100 to 100   |
-| maxPan             | Maximum stereo pan                    | 30        | -100 to 100   |
-| minPitch           | Minimum pitch level                   | 80        | 50–150        |
-| maxPitch           | Maximum pitch level                   | 120       | 50–150        |
-| realisticMode      | Enable distance-based realism         | true      | true/false    |
-| enableScreenFlash  | Enable screen flash effects           | true      | true/false    |
-| flashIntensity     | Maximum flash intensity               | 200       | 0–255         |
-| flashDuration      | Flash duration in frames              | 10        | 1–60          |
-
----
-
-## 🎮 Plugin Commands
-
-### Control Commands
-
-```javascript
-// Start random thunder playback
-RandomThunderSound startThunder
-
-// Stop thunder playback
-RandomThunderSound stopThunder
-
-// Play a single thunder sound
-RandomThunderSound playThunderOnce
-```
-
-### Configuration Commands
-
-```javascript
-// Set volume range (0-100)
-RandomThunderSound setVolumeRange min=30 max=90
-
-// Set pan range (-100 to 100)
-RandomThunderSound setPanRange min=-30 max=30
-
-// Set pitch range (50-150)
-RandomThunderSound setPitchRange min=80 max=120
-
-// Toggle realistic mode
-RandomThunderSound setRealisticMode enabled=true
-
-// Toggle screen flash
-RandomThunderSound setScreenFlash enabled=true
-
-// Change sound effect file
-RandomThunderSound setSEName name=Thunder2
-```
-
-### Utility Commands
-
-```javascript
-// Test sound system (plays 5 thunders)
-RandomThunderSound testSound count=5
-
-// Show debug information
-RandomThunderSound debug
-```
-
----
-
-## 🎵 Audio Modes
-
-### Realistic Mode
-
-- **Volume:** Decreases with distance
-- **Pitch:** Increases with distance (higher pitch for distant thunder)
-- **Screen Flash:** Intensity scales with distance
-- **Color:** Distant thunder has bluish tint
-
-### Independent Mode
-
-- All parameters are randomized independently
-- No correlation between distance effects
-
----
-
-## 🔧 Technical Features
-
-### Error Handling
-
-- Validates audio file names
-- Catches and logs audio playback errors
-- Checks parameter constraints
-
-### Performance Optimizations
-
-- Efficient random number generation
-- Optimized timing functions
-- Minimal memory footprint
-- Proper resource cleanup
-
-### Scene Management
-
-- Automatically stops in battle scenes
-- Clean termination on game exit
-- Proper scene transition handling
-
----
-
-## 📁 File Structure Requirements
-
-```
-audio/se/
-  Thunder1.ogg    # Default thunder sound
-  Thunder2.ogg    # Alternative sounds
-  Thunder3.ogg    # Can use any name
-```
-
----
-
-## 🚀 Installation
-
-1. Add `RandomThunderSound.js` to `js/plugins/`
-2. Enable in Plugin Manager
-3. Configure parameters as needed
-4. Ensure audio files are in `audio/se/` folder
-
----
-
-## 💡 Usage Examples
-
-### Basic Weather System
-
-```javascript
-// When rain starts
-RandomThunderSound startThunder
-
-// When rain stops
-RandomThunderSound stopThunder
-```
-
-### Dramatic Events
-
-```javascript
-// During intense story moments
-RandomThunderSound playThunderOnce
-RandomThunderSound setVolumeRange min=80 max=100
-```
-
-### Environment Variations
-
-```javascript
-// For forest environment
-RandomThunderSound setVolumeRange min=20 max=60
-RandomThunderSound setPitchRange min=90 max=110
-
-// For mountains environment  
-RandomThunderSound setVolumeRange min=40 max=80
-RandomThunderSound setRealisticMode enabled=true
-```
-
----
-
-# <a id="Chinese">中文文档</a>
+# 中文文档
 
 ---
 
@@ -399,3 +200,203 @@ RandomThunderSound setPitchRange min=90 max=110
 RandomThunderSound setVolumeRange min=40 max=80
 RandomThunderSound setRealisticMode enabled=true
 ```
+
+---
+## <a id="English">English Documentation<\a>
+## 🎯 Overview
+
+A highly optimized RPG Maker MV/MZ plugin that provides realistic random thunder sound effects with synchronized screen flashes.  
+The plugin features a modular architecture, improved performance, and extensive configuration.
+
+---
+
+## ✨ Features
+
+- **Modular Architecture:** Code organized into logical modules for better maintainability
+- **Realistic Thunder Simulation:** Distance-based audio effects with correlated parameters
+- **Screen Flash Effects:** Synchronized lightning flashes with distance-based color variations
+- **Flexible Control:** Comprehensive plugin command system
+- **Performance Optimized:** Efficient memory usage and reduced computational overhead
+- **Error Handling:** Robust error checking and warning system
+- **Debug Tools:** Built-in debugging and testing commands
+
+---
+
+## 🏗️ Architecture
+
+The plugin is organized into several specialized modules:
+
+| Module           | Purpose                             |
+|------------------|-------------------------------------|
+| Config           | Manages plugin parameters and defaults |
+| State            | Tracks runtime state and current settings |
+| AudioManagerEx   | Handles audio playback and effects  |
+| TimerManager     | Manages timing and scheduling       |
+| ConfigManager    | Processes configuration changes     |
+| DebugTools       | Provides debugging functionality    |
+| SceneHandler     | Manages scene transitions           |
+| PluginCommands   | Registers all plugin commands       |
+
+---
+
+## ⚙️ Configuration Parameters
+
+| Parameter          | Description                           | Default   | Range         |
+|--------------------|---------------------------------------|-----------|---------------|
+| thunderSeName      | SE filename (without extension)       | Thunder1  | Any valid filename |
+| minInterval        | Minimum interval between thunders (s) | 2         | 0.1–60        |
+| maxInterval        | Maximum interval between thunders (s) | 10        | 0.1–60        |
+| minVolume          | Minimum volume level                  | 30        | 0–100         |
+| maxVolume          | Maximum volume level                  | 90        | 0–100         |
+| minPan             | Minimum stereo pan                    | -30       | -100 to 100   |
+| maxPan             | Maximum stereo pan                    | 30        | -100 to 100   |
+| minPitch           | Minimum pitch level                   | 80        | 50–150        |
+| maxPitch           | Maximum pitch level                   | 120       | 50–150        |
+| realisticMode      | Enable distance-based realism         | true      | true/false    |
+| enableScreenFlash  | Enable screen flash effects           | true      | true/false    |
+| flashIntensity     | Maximum flash intensity               | 200       | 0–255         |
+| flashDuration      | Flash duration in frames              | 10        | 1–60          |
+
+---
+
+## 🎮 Plugin Commands
+
+### Control Commands
+
+```javascript
+// Start random thunder playback
+RandomThunderSound startThunder
+
+// Stop thunder playback
+RandomThunderSound stopThunder
+
+// Play a single thunder sound
+RandomThunderSound playThunderOnce
+```
+
+### Configuration Commands
+
+```javascript
+// Set volume range (0-100)
+RandomThunderSound setVolumeRange min=30 max=90
+
+// Set pan range (-100 to 100)
+RandomThunderSound setPanRange min=-30 max=30
+
+// Set pitch range (50-150)
+RandomThunderSound setPitchRange min=80 max=120
+
+// Toggle realistic mode
+RandomThunderSound setRealisticMode enabled=true
+
+// Toggle screen flash
+RandomThunderSound setScreenFlash enabled=true
+
+// Change sound effect file
+RandomThunderSound setSEName name=Thunder2
+```
+
+### Utility Commands
+
+```javascript
+// Test sound system (plays 5 thunders)
+RandomThunderSound testSound count=5
+
+// Show debug information
+RandomThunderSound debug
+```
+
+---
+
+## 🎵 Audio Modes
+
+### Realistic Mode
+
+- **Volume:** Decreases with distance
+- **Pitch:** Increases with distance (higher pitch for distant thunder)
+- **Screen Flash:** Intensity scales with distance
+- **Color:** Distant thunder has bluish tint
+
+### Independent Mode
+
+- All parameters are randomized independently
+- No correlation between distance effects
+
+---
+
+## 🔧 Technical Features
+
+### Error Handling
+
+- Validates audio file names
+- Catches and logs audio playback errors
+- Checks parameter constraints
+
+### Performance Optimizations
+
+- Efficient random number generation
+- Optimized timing functions
+- Minimal memory footprint
+- Proper resource cleanup
+
+### Scene Management
+
+- Automatically stops in battle scenes
+- Clean termination on game exit
+- Proper scene transition handling
+
+---
+
+## 📁 File Structure Requirements
+
+```
+audio/se/
+  Thunder1.ogg    # Default thunder sound
+  Thunder2.ogg    # Alternative sounds
+  Thunder3.ogg    # Can use any name
+```
+
+---
+
+## 🚀 Installation
+
+1. Add `RandomThunderSound.js` to `js/plugins/`
+2. Enable in Plugin Manager
+3. Configure parameters as needed
+4. Ensure audio files are in `audio/se/` folder
+
+---
+
+## 💡 Usage Examples
+
+### Basic Weather System
+
+```javascript
+// When rain starts
+RandomThunderSound startThunder
+
+// When rain stops
+RandomThunderSound stopThunder
+```
+
+### Dramatic Events
+
+```javascript
+// During intense story moments
+RandomThunderSound playThunderOnce
+RandomThunderSound setVolumeRange min=80 max=100
+```
+
+### Environment Variations
+
+```javascript
+// For forest environment
+RandomThunderSound setVolumeRange min=20 max=60
+RandomThunderSound setPitchRange min=90 max=110
+
+// For mountains environment  
+RandomThunderSound setVolumeRange min=40 max=80
+RandomThunderSound setRealisticMode enabled=true
+```
+
+---
