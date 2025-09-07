@@ -1,9 +1,8 @@
-# Random Thunder Sound Plugin - Optimized Version / 随机雷声音效插件 - 优化版
+# Random Thunder Sound Plugin / 随机雷声音效插件
 
-## English Documentation
-
+## [中文文档](#Chinese)
 ---
-
+## English Documentation
 ## 🎯 Overview
 
 A highly optimized RPG Maker MV/MZ plugin that provides realistic random thunder sound effects with synchronized screen flashes.  
@@ -202,7 +201,7 @@ RandomThunderSound setRealisticMode enabled=true
 
 ---
 
-# 中文文档
+# <a id="Chinese">中文文档</a>
 
 ---
 
