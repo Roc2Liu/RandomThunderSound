@@ -202,7 +202,7 @@ RandomThunderSound setRealisticMode enabled=true
 ```
 
 ---
-## <a id="English">English Documentation<\a>
+## <a id="English">English Documentation</a>
 ## 🎯 Overview
 
 A highly optimized RPG Maker MV/MZ plugin that provides realistic random thunder sound effects with synchronized screen flashes.  
