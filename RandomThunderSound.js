@@ -2,7 +2,7 @@
  * @target MZ
  * @plugindesc 随机播放雷声音效，可设置随机音量、声道平衡和音调模拟真实雷声效果，并带有画面闪烁
  * @author Roc2Liu
- * @url https://github.com/Roc2Liu/
+ * @url https://github.com/Roc2Liu/RandomThunderSound
  *
  * @param thunderSeName
  * @text 音效名称
