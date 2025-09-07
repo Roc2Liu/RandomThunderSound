@@ -7,7 +7,7 @@
  * @param thunderSeName
  * @text 音效名称
  * @desc 要播放的雷声音效名称
- * @default Thunder
+ * @default Thunder1
  * @type file
  * @dir audio/se
  *
